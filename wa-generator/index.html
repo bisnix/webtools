@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generator Link WhatsApp</title>
+  <meta charset="UTF-8">
+  <title>Generator Link WhatsApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f3f4f6; margin: 0; padding: 0; }
+    .container { max-width: 400px; padding: 2rem; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+    label { display: block; margin-bottom: .5rem; margin-top: 1rem; font-weight: bold; }
+    input, textarea { width: 100%; padding: .5rem; margin-top: .25rem; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: #25d366; color: #fff; border: none; padding: .7rem 1.3rem; border-radius: 4px; cursor: pointer; margin-top: 1rem; }
+    button:hover { background: #20b858; }
+    .result { margin-top: 1.5rem; }
+    .link-box { background: #f0fdf4; padding: .75rem; border-radius: 4px; display: flex; align-items: center; word-break: break-all; }
+    .copy-btn { background: #128c7e; color: #fff; border: none; padding: .4rem .8rem; margin-left: 1rem; border-radius: 4px; cursor: pointer; }
+    .copy-btn.copied { background: #43d787; }
+    @media (max-width: 440px) { .container { padding: 1rem; } }
+  </style>
 </head>
 <body>
-    <h1>Selamat Datang di WhatsApp Generator</h1>
-    <p>Gunakan alat ini untuk membuat link WhatsApp dengan pesan khusus.</p>
+  <div class="container">
+    <h2>Generator Link WhatsApp</h2>
+    <label for="number">Nomor WhatsApp (cth: 6281234567890)</label>
+    <input type="tel" id="number" placeholder="Masukkan nomor tanpa + atau spasi" required>
+
+    <label for="message">Pesan (Opsional)</label>
+    <textarea id="message" rows="3" placeholder="Tulis pesan default..."></textarea>
+
+    <button onclick="generateLink()">Generate Link</button>
+    <div class="result" id="result" style="display:none;">
+      <p>Hasil Link WhatsApp:</p>
+      <div class="link-box">
+        <a id="wa-link" href="#" target="_blank"></a>
+        <button class="copy-btn" onclick="copyLink(this)">Copy</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function generateLink() {
+      const num = document.getElementById('number').value.trim();
+      const msg = document.getElementById('message').value;
+      if (!/^\d{10,}$/.test(num)) {
+        alert('Nomor tidak valid. Contoh: 6281234567890');
+        return;
+      }
+      const encodedMsg = encodeURIComponent(msg);
+      const link = msg
+        ? `https://wa.me/${num}?text=${encodedMsg}`
+        : `https://wa.me/${num}`;
+      document.getElementById('wa-link').href = link;
+      document.getElementById('wa-link').textContent = link;
+      document.getElementById('result').style.display = 'block';
+    }
+
+    function copyLink(btn) {
+      const link = document.getElementById('wa-link').href;
+      navigator.clipboard.writeText(link)
+        .then(() => {
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+            btn.classList.remove('copied');
+          }, 1700);
+        });
+    }
+  </script>
 </body>
 </html>
