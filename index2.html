@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solopreneur Tools Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Reset */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        /* Navbar Styles */
+        header {
+            background-color: #1f1f1f;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        /* Main Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        /* Card Styles */
+        .tool-card {
+            background: #1c1c1c;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card i {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        .tool-card p {
+            font-size: 0.95rem;
+            color: #dddddd;
+            margin: 15px 0 20px;
+        }
+
+        .tool-card a {
+            background-color: #ffffff;
+            color: #121212;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-card a:hover {
+            background-color: #4CAF50;
+            color: #ffffff;
+            box-shadow: 0 6px 12px rgba(0, 255, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Kelebihan Section Styles */
+        .kelebihan-section {
+            margin: 50px auto; /* Spasi antar bagian */
+            text-align: center;
+        }
+
+        .kelebihan-section h2 {
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .kelebihan-section p {
+            margin: 10px 0 0;
+            color: #dddddd;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 15px 10px;
+            background: #1f1f1f;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Fitur Container Styles */
+        .fitur-container {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+        }
+
+        .fitur-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Grid menjadi 3x2 */
+            gap: 25px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fitur-item {
+            display: flex;
+            align-items: center;
+            color: #dddddd;
+        }
+
+        .fitur-item i {
+            font-size: 1.5rem;
+            margin-right: 15px; /* Spasi antara ikon dan teks */
+            color: #ffffff;
+        }
+
+        .fitur-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <h1>Solopreneur Tools Hub</h1>
+        <p>Kumpulan alat untuk membantu solopreneur produktif</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="tools-grid">
+            <!-- Tool Active (WhatsApp Link Generator) -->
+            <div class="tool-card">
+                <i class="fab fa-whatsapp"></i> <!-- WhatsApp Icon -->
+                <h3>Generator Link WhatsApp</h3>
+                <p>Buat link WhatsApp dengan pesan khusus untuk memudahkan komunikasi bisnis Anda.</p>
+                <a href="http://tools.bisnix.com/wa-generator">Pake Sekarang</a>
+            </div>
+
+            <!-- Inactive Tools -->
+            <div class="tool-card inactive"></div>
+            <div class="tool-card inactive"></div>
+            <div class="tool-card inactive"></div>
+            <div class="tool-card inactive"></div>
+            <div class="tool-card inactive"></div>
+            <div class="tool-card inactive"></div>
+            <div class="tool-card inactive"></div>
+        </div>
+    </div>
+
+    <!-- Kelebihan Section -->
+    <div class="kelebihan-section">
+        <h2>Kelebihan</h2>
+        <p>Solusi Sederhana untuk Produktivitas Maksimal</p>
+    </div>
+
+    <!-- Features Section -->
+    <div class="fitur-container">
+        <div class="fitur-grid">
+            <div class="fitur-item">
+                <i class="fas fa-mouse-pointer"></i>
+                <p><strong>Mudah digunakan:</strong> Semua alat dirancang agar ramah pengguna dan intuitif untuk digunakan.</p>
+            </div>
+            <div class="fitur-item">
+                <i class="fas fa-desktop"></i>
+                <p><strong>Tidak perlu instalasi:</strong> Alat ini dapat digunakan langsung dari browser Anda, tanpa perlu instalasi.</p>
+            </div>
+            <div class="fitur-item">
+                <i class="fas fa-globe"></i>
+                <p><strong>Mendukung sistem Anda:</strong> Dapat digunakan di PC, Mac, Linux, atau perangkat seluler.</p>
+            </div>
+            <div class="fitur-item">
+                <i class="fas fa-leaf"></i>
+                <p><strong>Hemat sumber daya:</strong> File diproses di server kami sehingga perangkat Anda tetap ringan.</p>
+            </div>
+            <div class="fitur-item">
+                <i class="fas fa-tags"></i>
+                <p><strong>100% gratis:</strong> Semua alat tersedia secara gratis tanpa batasan.</p>
+            </div>
+            <div class="fitur-item">
+                <i class="fas fa-infinity"></i>
+                <p><strong>Tidak ada batasan:</strong> Gunakan alat ini kapan pun tanpa batasan yang dibuat-buat.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Solopreneur Tools Hub. Dibuat dengan ❤️ untuk solopreneur. <a href="#">Nama Anda</a></p>
+    </footer>
+</body>
+</html>

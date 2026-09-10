@@ -1,242 +1,254 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solopreneur Tools Hub</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        /* Reset */
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solopreneur Tools Hub | Bisnix</title>
+  <meta name="description" content="Kumpulan alat gratis untuk kerja harian. Langsung jalan di browser, tanpa daftar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --paper: #fafaf9;
+      --card: #ffffff;
+      --ink: #101010;
+      --muted: #616161;
+      --line: #e5e5e5;
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
 
-        /* Navbar Styles */
-        header {
-            background-color: #1f1f1f;
-            color: white;
-            padding: 20px 10px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .brand-mark {
+      width: 32px; height: 32px;
+      border-radius: 10px;
+      background: var(--ink);
+      color: #fff;
+      display: grid; place-items: center;
+      font-size: 16px;
+    }
+    .topbar span.meta {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-        }
+    .hero {
+      background: var(--ink);
+      color: #fff;
+      border-radius: var(--radius);
+      max-width: 960px;
+      margin: 6px auto 0;
+      padding: 48px 40px;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      max-width: 16ch;
+    }
+    .hero p {
+      margin: 0;
+      color: #c9c9c9;
+      font-size: 16px;
+      max-width: 46ch;
+    }
 
-        header p {
-            margin: 5px 0 0;
-            font-weight: 300;
-            font-size: 0.95rem;
-        }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 28px 24px 56px;
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+    }
+    .tool-card {
+      background: var(--ink);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 32px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tool-card i {
+      font-size: 30px;
+    }
+    .tool-card h2 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+    .tool-card p {
+      margin: 0 0 8px;
+      color: #c9c9c9;
+      font-size: 15px;
+    }
+    .tool-card a.cta {
+      margin-top: auto;
+      align-self: flex-start;
+      background: #fff;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 12px 22px;
+      border-radius: 12px;
+    }
+    .tool-card a.cta:hover { background: #e8e8e8; }
+    .tool-card.ghost {
+      background: var(--card);
+      color: var(--ink);
+      border: 1.5px dashed var(--line);
+      justify-content: center;
+    }
+    .tool-card.ghost i { color: var(--muted); }
+    .tool-card.ghost p { color: var(--muted); }
+    .tool-card.ghost span.soon {
+      align-self: flex-start;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1.5px solid var(--line);
+      color: var(--muted);
+      padding: 10px 18px;
+      border-radius: 12px;
+    }
 
-        /* Main Container Styles */
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 20px;
-        }
+    .fitur {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 28px;
+      margin-top: 40px;
+    }
+    .fitur-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .fitur-item i {
+      font-size: 18px;
+      margin-top: 4px;
+    }
+    .fitur-item strong { display: block; font-size: 15px; }
+    .fitur-item p {
+      margin: 2px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
 
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 0 20px 36px;
+    }
 
-        /* Card Styles */
-        .tool-card {
-            background: #1c1c1c;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.3s ease;
-        }
+    a:focus-visible {
+      outline: 3px solid rgba(16,16,16,.35);
+      outline-offset: 2px;
+    }
 
-        .tool-card i {
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-        }
-
-        .tool-card h3 {
-            margin: 0;
-            font-size: 1.4rem;
-            color: #ffffff;
-        }
-
-        .tool-card p {
-            font-size: 0.95rem;
-            color: #dddddd;
-            margin: 15px 0 20px;
-        }
-
-        .tool-card a {
-            background-color: #ffffff;
-            color: #121212;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .tool-card a:hover {
-            background-color: #4CAF50;
-            color: #ffffff;
-            box-shadow: 0 6px 12px rgba(0, 255, 0, 0.3);
-            transform: scale(1.05);
-        }
-
-        /* Kelebihan Section Styles */
-        .kelebihan-section {
-            margin: 50px auto; /* Spasi antar bagian */
-            text-align: center;
-        }
-
-        .kelebihan-section h2 {
-            font-size: 1.8rem;
-            margin: 0;
-            font-weight: bold;
-        }
-
-        .kelebihan-section p {
-            margin: 10px 0 0;
-            color: #dddddd;
-            font-size: 1rem;
-            font-weight: 300;
-        }
-
-        /* Footer Styles */
-        footer {
-            text-align: center;
-            padding: 15px 10px;
-            background: #1f1f1f;
-            color: white;
-            margin-top: 40px;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Fitur Container Styles */
-        .fitur-container {
-            max-width: 1200px;
-            margin: 40px auto 0;
-            padding: 0 20px;
-        }
-
-        .fitur-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Grid menjadi 3x2 */
-            gap: 25px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .fitur-item {
-            display: flex;
-            align-items: center;
-            color: #dddddd;
-        }
-
-        .fitur-item i {
-            font-size: 1.5rem;
-            margin-right: 15px; /* Spasi antara ikon dan teks */
-            color: #ffffff;
-        }
-
-        .fitur-item p {
-            margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-    </style>
+    @media (max-width: 720px) {
+      .hero { padding: 36px 24px; margin-left: 16px; margin-right: 16px; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .fitur { grid-template-columns: 1fr; }
+      .topbar, main { padding-left: 16px; padding-right: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <h1>Solopreneur Tools Hub</h1>
-        <p>Kumpulan alat untuk membantu solopreneur produktif</p>
-    </header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark">✆</div>
+      <div>Solopreneur Tools</div>
+    </div>
+    <span class="meta">Gratis, tanpa daftar</span>
+  </div>
 
-    <!-- Main Container -->
-    <div class="container">
-        <div class="tools-grid">
-            <!-- Tool Active (WhatsApp Link Generator) -->
-            <div class="tool-card">
-                <i class="fab fa-whatsapp"></i> <!-- WhatsApp Icon -->
-                <h3>Generator Link WhatsApp</h3>
-                <p>Buat link WhatsApp dengan pesan khusus untuk memudahkan komunikasi bisnis Anda.</p>
-                <a href="http://tools.bisnix.com/wa-generator">Pake Sekarang</a>
-            </div>
+  <div class="hero">
+    <h1>Alat kecil untuk kerja harian.</h1>
+    <p>Kumpulan alat gratis yang langsung jalan di browser. Tanpa daftar, tanpa instal.</p>
+  </div>
 
-            <!-- Inactive Tools -->
-            <div class="tool-card inactive"></div>
-            <div class="tool-card inactive"></div>
-            <div class="tool-card inactive"></div>
-            <div class="tool-card inactive"></div>
-            <div class="tool-card inactive"></div>
-            <div class="tool-card inactive"></div>
-            <div class="tool-card inactive"></div>
+  <main>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <i class="fab fa-whatsapp"></i>
+        <h2>Generator Link WhatsApp</h2>
+        <p>Ketik nomor, jadi link chat. Tempel di bio, katalog, atau tombol website.</p>
+        <a class="cta" href="wa-generator/">Buka</a>
+      </div>
+      <div class="tool-card ghost">
+        <i class="far fa-clock"></i>
+        <h2>Segera hadir</h2>
+        <p>Alat berikutnya lagi disiapkan.</p>
+        <span class="soon">Tunggu kabar</span>
+      </div>
+    </div>
+
+    <div class="fitur">
+      <div class="fitur-item">
+        <i class="fas fa-bolt"></i>
+        <div>
+          <strong>Langsung jalan</strong>
+          <p>Buka halamannya, alatnya siap dipakai.</p>
         </div>
-    </div>
-
-    <!-- Kelebihan Section -->
-    <div class="kelebihan-section">
-        <h2>Kelebihan</h2>
-        <p>Solusi Sederhana untuk Produktivitas Maksimal</p>
-    </div>
-
-    <!-- Features Section -->
-    <div class="fitur-container">
-        <div class="fitur-grid">
-            <div class="fitur-item">
-                <i class="fas fa-mouse-pointer"></i>
-                <p><strong>Mudah digunakan:</strong> Semua alat dirancang agar ramah pengguna dan intuitif untuk digunakan.</p>
-            </div>
-            <div class="fitur-item">
-                <i class="fas fa-desktop"></i>
-                <p><strong>Tidak perlu instalasi:</strong> Alat ini dapat digunakan langsung dari browser Anda, tanpa perlu instalasi.</p>
-            </div>
-            <div class="fitur-item">
-                <i class="fas fa-globe"></i>
-                <p><strong>Mendukung sistem Anda:</strong> Dapat digunakan di PC, Mac, Linux, atau perangkat seluler.</p>
-            </div>
-            <div class="fitur-item">
-                <i class="fas fa-leaf"></i>
-                <p><strong>Hemat sumber daya:</strong> File diproses di server kami sehingga perangkat Anda tetap ringan.</p>
-            </div>
-            <div class="fitur-item">
-                <i class="fas fa-tags"></i>
-                <p><strong>100% gratis:</strong> Semua alat tersedia secara gratis tanpa batasan.</p>
-            </div>
-            <div class="fitur-item">
-                <i class="fas fa-infinity"></i>
-                <p><strong>Tidak ada batasan:</strong> Gunakan alat ini kapan pun tanpa batasan yang dibuat-buat.</p>
-            </div>
+      </div>
+      <div class="fitur-item">
+        <i class="fas fa-desktop"></i>
+        <div>
+          <strong>Tanpa instal</strong>
+          <p>Tidak ada unduhan, tidak ada akun.</p>
         </div>
+      </div>
+      <div class="fitur-item">
+        <i class="fas fa-mobile-screen"></i>
+        <div>
+          <strong>Rapi di HP dan laptop</strong>
+          <p>Tampilan menyesuaikan layar.</p>
+        </div>
+      </div>
+      <div class="fitur-item">
+        <i class="fas fa-gift"></i>
+        <div>
+          <strong>Gratis</strong>
+          <p>Semua alat bebas dipakai.</p>
+        </div>
+      </div>
     </div>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 Solopreneur Tools Hub. Dibuat dengan ❤️ untuk solopreneur. <a href="#">Nama Anda</a></p>
-    </footer>
+  <footer>© 2026 Bisnix. Alat gratis untuk kerja harian.</footer>
 </body>
 </html>
